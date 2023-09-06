@@ -3,7 +3,7 @@ CLIPCap 논문을 Base로 구현한 AI 코드
 
 # File Structure
 ```
-|-- ./*CLIP_CAP_Based*
+|-- ./CLIP_CAP_Based
 |   |-- ./CLIP_CAP_Based/data
 |   |-- ./CLIP_CAP_Based/EDA
 |   |-- ./CLIP_CAP_Based/Inference_notebook
@@ -11,15 +11,15 @@ CLIPCap 논문을 Base로 구현한 AI 코드
 |   |-- ./CLIP_CAP_Based/sample_images
 |   `-- ./CLIP_CAP_Based/train_custom.py
 |   |-- ./CLIP_CAP_Based/README.md
-|-- ./*data*
+|-- ./data
 |   |-- ./data/sample_submission.csv
 |   |-- ./data/train.csv
 |   |-- ./data/test.csv
 |   |-- ./data/submit.csv
 |   |-- ./data/train
 |   |-- ./data/test
-|   |-- ./*data/train_data.pkl*
-|   `-- ./*data/train_data_tokens.pkl* -> Made by *parse_caption.ipynb*
+|   |-- ./data/train_data.pkl
+|   `-- ./data/train_data_tokens.pkl -> Made by parse_caption.ipynb
 ```
 # 실행 순서
 1. 경로를 위의 File Structure대로 구성한다.
