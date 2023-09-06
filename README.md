@@ -32,5 +32,10 @@ CLIPCap 논문을 Base로 구현한 AI 코드
 5. Submit.ipynb를 이용해 대회 submit 코드 만들기 - *추가 예정*
 6. VIT Feature를 가져와서 MOS Regression Task도 가능하도록 parse_caption에서부터 코드 수정하기 - *추가 예정*
 
+# Environments
+- pytorch:1.13.0
+- cudnn8.0
+- cuda11.6
+
 # Reference
 - https://github.com/rmokady/CLIP_prefix_caption
