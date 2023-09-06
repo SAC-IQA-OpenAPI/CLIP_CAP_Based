@@ -338,12 +338,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data', default='./data/coco/oscar_split_train.pkl')
     parser.add_argument('--out_dir', default='./checkpoints')
-    parser.add_argument('--prefix', default='coco_prefix', help='prefix for saved filenames')
-    parser.add_argument('--epochs', type=int, default=11)
+    parser.add_argument('--prefix', default='custom_prefix', help='prefix for saved filenames')
+    parser.add_argument('--epochs', type=int, default=11) # epoch 당 10분
     parser.add_argument('--save_every', type=int, default=5)
     parser.add_argument('--prefix_length', type=int, default=10)
     parser.add_argument('--prefix_length_clip', type=int, default=10)
-    parser.add_argument('--bs', type=int, default=40) # Batch 40 -> 10GB, Batch 5 -> 5GB
+    parser.add_argument('--bs', type=int, default=28) # Batch 40 -> 10GB, Batch 5 -> 5GB
     parser.add_argument('--only_prefix', dest='only_prefix', action='store_true')
     parser.add_argument('--mapping_type', type=str, default='mlp', help='mlp/transformer')
     parser.add_argument('--num_layers', type=int, default=8)
