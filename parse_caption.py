@@ -18,7 +18,7 @@ data = pd.read_csv(data_path)
 print(f"{len(data):0d} captions loaded from csv")
 all_embeddings = []
 all_captions = []
-for i in tqdm(range(len(data[:100]))):
+for i in tqdm(range(len(data))):
     '''
         Index(['img_name', 'img_path', 'mos', 'comments'], dtype='object')
         img_name                                           41wy7upxzl

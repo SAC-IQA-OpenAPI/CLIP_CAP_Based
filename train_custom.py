@@ -304,10 +304,12 @@ def train(dataset: ClipCocoDataset, model: ClipCaptionModel, args,
         optimizer, num_warmup_steps=warmup_steps, num_training_steps=epochs * len(train_dataloader)
     )
     # save_config(args)
+    print(len(train_dataloader))
     for epoch in range(epochs):
         print(f">>> Training epoch {epoch}")
         sys.stdout.flush()
         progress = tqdm(total=len(train_dataloader), desc=output_prefix)
+        
         for idx, (tokens, mask, prefix) in enumerate(train_dataloader):
             model.zero_grad()
             tokens, mask, prefix = tokens.to(device), mask.to(device), prefix.to(device, dtype=torch.float32)
@@ -340,10 +342,10 @@ def main():
     parser.add_argument('--out_dir', default='./checkpoints')
     parser.add_argument('--prefix', default='custom_prefix', help='prefix for saved filenames')
     parser.add_argument('--epochs', type=int, default=11) # epoch 당 10분
-    parser.add_argument('--save_every', type=int, default=5)
+    parser.add_argument('--save_every', type=int, default=10)
     parser.add_argument('--prefix_length', type=int, default=10)
     parser.add_argument('--prefix_length_clip', type=int, default=10)
-    parser.add_argument('--bs', type=int, default=28) # Batch 40 -> 10GB, Batch 5 -> 5GB
+    parser.add_argument('--bs', type=int, default=16) # Batch 40 -> 10GB, Batch 5 -> 5GB
     parser.add_argument('--only_prefix', dest='only_prefix', action='store_true')
     parser.add_argument('--mapping_type', type=str, default='mlp', help='mlp/transformer')
     parser.add_argument('--num_layers', type=int, default=8)
